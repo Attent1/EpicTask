@@ -1,4 +1,4 @@
-package br.com.fiap.epictask.task;
+package br.com.fiap.epictaska.task;
 
 import org.springframework.stereotype.Service;
 
@@ -7,7 +7,6 @@ import java.util.UUID;
 
 @Service
 public class TaskService {
-
 
     private final TaskRepository taskRepository;
 

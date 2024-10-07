@@ -1,4 +1,4 @@
-package br.com.fiap.epictask.task;
+package br.com.fiap.epictaska.task;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -10,12 +10,12 @@ import java.util.UUID;
 @Entity
 @Data
 public class Task {
-
     @Id
     UUID id = UUID.randomUUID();
 
     @NotBlank
     String title;
+
     @Size(min = 10)
     String description;
 

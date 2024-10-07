@@ -1,4 +1,4 @@
-package br.com.fiap.epictask.task;
+package br.com.fiap.epictaska.task;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

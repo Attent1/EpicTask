@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Epic Task - cadastrar</title>
@@ -8,44 +8,54 @@
             href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
     >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body class="container">
 
-    <h1 class="tittle">Cadastrar Tarefa</h1>
-<form action="/task" method="post" class="is-max-tablet" th:object="${task}">
+<h1 class="title">Cadastrar Tarefa</h1>
+
+<form th:action="@{/task}" method="post" class="is-max-tablet" th:object="${task}">
+
     <div class="field">
         <label class="label">Título</label>
         <div class="control">
             <input class="input" type="text" placeholder="título da tarefa" th:field="*{title}">
         </div>
+        <p class="help is-danger" th:errors="*{title}"></p>
     </div>
-    <p class="help is-danger" th:errors="*{title}"></p>
+
     <div class="field">
         <label class="label">Descrição</label>
         <div class="control">
-            <input class="input" type="text" placeholder="descrição da tarefa" th:field="*{description}">
+            <textarea class="textarea" placeholder="descrição da tarefa" th:field="*{description}"></textarea>
         </div>
+        <p class="help is-danger" th:errors="*{description}"></p>
     </div>
-    <p class="help is-danger" th:errors="*{description}"></p>
+
     <div class="field">
         <label class="label">Pontos</label>
         <div class="control">
-            <input class="input" type="number" placeholder="Pontuação da tarefa" min="1" th:field="*{score}" >
+            <input class="input" type="number" th:field="*{score}" placeholder="pontuação da tarefa" min="1">
         </div>
+        <p class="help is-danger" th:errors="*{score}"></p>
     </div>
-    <p class="help is-danger" th:errors="*{score}"></p>
+
+    <a href="/" class="button is-default">
+        <span class="icon is-small">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+        <span>Cancelar</span>
+    </a>
+
     <button class="button is-primary">
         <span>Cadastrar</span>
         <span class="icon is-small">
-              <i class="fas fa-check"></i>
+          <i class="fas fa-check"></i>
         </span>
     </button>
-    <a href="/" class="button is-default">
-        <span>Cancelar</span>
-        <span class="icon is-small">
-              <i class="fas fa-arrow-left"></i>
-        </span>
-    </a>
+
+
+
 </form>
 
 </body>
