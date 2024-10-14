@@ -1,0 +1,2 @@
+ALTER TABLE epicuser
+ALTER COLUMN email DROP NOT NULL;
